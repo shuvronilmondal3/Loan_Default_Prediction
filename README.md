@@ -1,5 +1,5 @@
 # Loan Default Prediction Web Application
-(Optional: You can add a GIF or screenshot of your project in action here.)
+
 
 Overview
 This project is an end-to-end machine learning application designed to predict the likelihood of a customer defaulting on a home equity loan. It addresses a critical business need for financial institutions by automating credit risk assessment, making the process faster, more consistent, and less prone to human bias.
