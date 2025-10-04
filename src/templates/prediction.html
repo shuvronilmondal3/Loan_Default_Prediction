@@ -1,27 +1,73 @@
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prediction Result</title>
     <style>
-    .result {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 18px;
-        padding: 12px;
-        border-radius: 8px;
-        background: #e9f7ef;
-        color: #2e7d32;
-        font-weight: bold;
-}
- </style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+        .prediction-result {
+            font-size: 1.75rem;
+            font-weight: 700;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #e9ecef;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+        /* Style for the "Go Back" button */
+        a.button {
+            display: inline-block;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        a.button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+    </style>
 </head>
 <body>
-      {% if prediction_text %}
-            <div class="result">
+    <div class="container">
+        <h1>Prediction Result</h1>
+
+      
+              {% if prediction_text %}
+            <div class="prediction-result">
                 <h3>{{ prediction_text }}</h3>
             </div>
         {% endif %}
+
+        <!-- This is the button that links back to the form page -->
+        <a href="{{ url_for('home') }}" class="button">Make Another Prediction</a>
+    </div>
 </body>
 </html>
