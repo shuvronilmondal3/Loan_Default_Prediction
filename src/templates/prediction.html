@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .result {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+        padding: 12px;
+        border-radius: 8px;
+        background: #e9f7ef;
+        color: #2e7d32;
+        font-weight: bold;
+}
+ </style>
+</head>
+<body>
+      {% if prediction_text %}
+            <div class="result">
+                <h3>{{ prediction_text }}</h3>
+            </div>
+        {% endif %}
+</body>
+</html>

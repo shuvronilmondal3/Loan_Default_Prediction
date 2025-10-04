@@ -11,57 +11,82 @@
 <body>
     <div class="container">
         <h2>Home Loan Default Prediction</h2>
-        <form action="/predict" method="post" class="form-box">
-            <label>Loan Amount:</label>
-            <input type="number" step="0.01" name="LOAN" required>
+        <form action="{{ url_for('predict') }}" method="post" class="form-box">
+            <div class="form-field">
+                <label>Loan Amount:</label>
+                <input type="number" step="0.01" name="LOAN" required>
+            </div>
 
-            <label>Mortgage Due:</label>
-            <input type="number" step="0.01" name="MORTDUE">
+            <div class="form-field">
+                <label>Mortgage Due:</label>
+                <input type="number" step="0.01" name="MORTDUE">
+            </div>
 
-            <label>Property Value:</label>
-            <input type="number" step="0.01" name="VALUE">
+            <div class="form-field">
+                <label>Property Value:</label>
+                <input type="number" step="0.01" name="VALUE">
+            </div>
 
-            <label>Reason:</label>
-            <select name="REASON">
-                <option value="DebtCon">Debt Consolidation</option>
-                <option value="HomeImp">Home Improvement</option>
-            </select>
+            <div class="form-field">
+                <label>Reason:</label>
+                <select name="REASON">
+                    <option value="DebtCon">Debt Consolidation</option>
+                    <option value="HomeImp">Home Improvement</option>
+                </select>
+            </div>
 
-            <label>Job:</label>
-            <select name="JOB">
-                <option value="Office">Office</option>
-                <option value="Sales">Sales</option>
-                <option value="Mgr">Manager</option>
-                <option value="Self">Self</option>
-                <option value="ProfExe">Professional/Executive</option>
-                <option value="Other">Other</option>
-            </select>
+            <div class="form-field">
+                <label>Job:</label>
+                <select name="JOB">
+                    <option value="Office">Office</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Mgr">Manager</option>
+                    <option value="Self">Self</option>
+                    <option value="ProfExe">Professional/Executive</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
 
-            <label>Years on Job:</label>
-            <input type="number" step="1" name="YOJ">
+            <div class="form-field">
+                <label>Years on Job:</label>
+                <input type="number" step="1" name="YOJ">
+            </div>
 
-            <label>Derogatory Reports:</label>
-            <input type="number" step="1" name="DEROG">
+            <div class="form-field">
+                <label>Derogatory Reports:</label>
+                <input type="number" step="1" name="DEROG">
+            </div>
 
-            <label>Delinquencies:</label>
-            <input type="number" step="1" name="DELINQ">
+            <div class="form-field">
+                <label>Delinquencies:</label>
+                <input type="number" step="1" name="DELINQ">
+            </div>
 
-            <label>Age of Oldest Trade Line (months):</label>
-            <input type="number" step="1" name="CLAGE">
+            <div class="form-field">
+                <label>Age of Oldest Trade Line (months):</label>
+                <input type="number" step="1" name="CLAGE">
+            </div>
 
-            <label>Number of Recent Inquiries:</label>
-            <input type="number" step="1" name="NINQ">
+            <div class="form-field">
+                <label>Number of Recent Inquiries:</label>
+                <input type="number" step="1" name="NINQ">
+            </div>
 
-            <label>Number of Credit Lines:</label>
-            <input type="number" step="1" name="CLNO">
+            <div class="form-field">
+                <label>Number of Credit Lines:</label>
+                <input type="number" step="1" name="CLNO">
+            </div>
 
-            <label>Debt-to-Income Ratio:</label>
-            <input type="number" step="0.01" name="DEBTINC">
+            <div class="form-field">
+                <label>Debt-to-Income Ratio:</label>
+                <input type="number" step="0.01" name="DEBTINC">
+            </div>
 
-            <button type="submit">Predict</button>
+            <div class="form-field">
+                <button type="submit" class="submit-btn">Predict</button>
+            </div>
         </form>
-
-        {% if prediction_text %}
+           {% if prediction_text %}
             <div class="result">
                 <h3>{{ prediction_text }}</h3>
             </div>

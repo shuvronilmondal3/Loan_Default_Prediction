@@ -6,8 +6,8 @@ body {
 }
 
 .container {
-    width: 400px;
-    margin: 50px auto;
+    max-width: 980px;
+    margin: 30px auto;
     background: #fff;
     padding: 25px;
     border-radius: 12px;
@@ -21,6 +21,13 @@ h2 {
 }
 
 .form-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 20px;
+    align-items: start;
+}
+
+.form-field {
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +42,7 @@ input, select {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    margin-bottom: 12px;
+    margin-top: 6px;
     font-size: 14px;
 }
 
@@ -52,6 +59,38 @@ button {
 
 button:hover {
     background: #0056b3;
+}
+
+.submit-btn {
+    width: 100%;
+}
+
+/* Make the submit button row span all columns */
+.form-field:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+}
+
+.form-field:last-child .submit-btn {
+    max-width: 260px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+    .form-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 16px;
+        padding: 18px;
+    }
+    .form-box {
+        grid-template-columns: 1fr;
+    }
 }
 
 .result {
